@@ -50,6 +50,7 @@ body {
     z-index: 2;
     color: white;
     animation: fadeIn 3s ease-in-out;
+    padding: 0 20px;
 }
 
 .message {
@@ -88,7 +89,47 @@ body {
     box-shadow: 0 6px 20px rgba(255, 87, 34, 0.5);
 }
 
-/* Keyframes */
+/* Popup */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    padding: 20px 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    animation: popupShow 0.5s ease-in-out;
+    z-index: 1000;
+}
+
+.popup h2 {
+    font-size: 1.8rem;
+    margin: 0;
+    color: #ff5722;
+}
+
+.popup p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #666;
+}
+
+/* Hiệu ứng hiển thị popup */
+@keyframes popupShow {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Hiệu ứng khác */
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -128,42 +169,50 @@ body {
         box-shadow: 0 6px 20px rgba(255, 87, 34, 0.5);
     }
 }
-/* Popup */
-.popup {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(255, 255, 255, 0.9);
-    color: #333;
-    padding: 20px 40px;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    animation: popupShow 0.5s ease-in-out;
-    z-index: 1000;
-}
 
-.popup h2 {
-    font-size: 1.8rem;
-    margin: 0;
-    color: #ff5722;
-}
-
-.popup p {
-    font-size: 1.2rem;
-    margin-top: 10px;
-    color: #666;
-}
-
-/* Hiệu ứng hiển thị popup */
-@keyframes popupShow {
-    0% {
-        opacity: 0;
-        transform: translate(-50%, -60%);
+/* MEDIA QUERIES - Responsive */
+@media (max-width: 768px) {
+    .message {
+        font-size: 2rem;
     }
-    100% {
-        opacity: 1;
-        transform: translate(-50%, -50%);
+
+    .sub-message {
+        font-size: 1rem;
+    }
+
+    .button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+    .popup h2 {
+        font-size: 1.5rem;
+    }
+
+    .popup p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .message {
+        font-size: 1.8rem;
+    }
+
+    .sub-message {
+        font-size: 0.9rem;
+    }
+
+    .button {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+
+    .popup h2 {
+        font-size: 1.2rem;
+    }
+
+    .popup p {
+        font-size: 0.8rem;
     }
 }
