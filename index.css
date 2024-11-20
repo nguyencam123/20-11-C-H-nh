@@ -103,18 +103,24 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     animation: popupShow 0.5s ease-in-out;
     z-index: 1000;
+    max-width: 90%; /* Đảm bảo popup không quá rộng trên màn hình nhỏ */
+    word-wrap: break-word; /* Đảm bảo văn bản không bị cắt hoặc tràn */
 }
 
+/* Tiêu đề popup */
 .popup h2 {
     font-size: 1.8rem;
     margin: 0;
     color: #ff5722;
+    text-align: center;
 }
 
+/* Nội dung popup */
 .popup p {
     font-size: 1.2rem;
     margin-top: 10px;
     color: #666;
+    line-height: 1.5;
 }
 
 /* Hiệu ứng hiển thị popup */
@@ -126,6 +132,18 @@ body {
     100% {
         opacity: 1;
         transform: translate(-50%, -50%);
+    }
+}
+
+/* MEDIA QUERIES - Responsive */
+@media (max-width: 768px) {
+    /* Giảm kích thước chữ cho các thiết bị tablet */
+    .popup h2 {
+        font-size: 1.5rem;
+    }
+
+    .popup p {
+        font-size: 1rem;
     }
 }
 
